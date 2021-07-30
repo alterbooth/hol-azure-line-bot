@@ -1,0 +1,8 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+        "LINE_CHANNEL_ACCESS_TOKEN": "<YOUR_LINE_CHANNEL_ACCESS_TOKEN>"
+    }
+}
