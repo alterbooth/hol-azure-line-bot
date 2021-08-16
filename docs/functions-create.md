@@ -1,12 +1,28 @@
 # Functionsの作成
 ## Functionsリソース作成
-- リソースグループを作成
-- 作成したリソースグループへ移動
-- 上部「作成」からリソースの作成画面へ移動
-- 検索窓に「Functions」と入力して、候補の中の「Function App」を選択
-- Functionsのアイコンが表示されている画面へ移動したらアイコンの右下付近にある「作成」ボタンを押下
-- 作成に必要な内容を記入して作成
-- リソースが作成されたら次の工程へ！
+はじめに、リソースグループを作成します。  
+[Azureポータル](https://portal.azure.com) を開き、上部の検索バーから「リソース」と入力し「リソース グループ」を選択します。  
+![リソースグループ作成1](images/create_resourcegroup_1.png)  
+  
+「作成」ボタンから、リソースグループ作成画面を開き、情報を入力します。  
+![リソースグループ作成2](images/create_resourcegroup_2.png)  
+  
+「確認および作成」タブより、「作成」ボタンを押下します。  
+![リソースグループ作成3](images/create_resourcegroup_3.png)  
+  
+次に、Azure Functionsのリソースを作成します。  
+作成したリソースグループを開き、「作成」ボタンを選択します。  
+![Azure Functions作成1](images/create_functions_1.png)  
+  
+リソースの作成画面が開けたら、「関数アプリ」を選択します。  
+![Azure Functions作成2](images/create_functions_2.png)  
+  
+下記スクリーンショットに倣って情報を入力します。  
+入力後「確認および作成」を選択、確認および作成の画面で「作成」と移ってください。  
+![Azure Functions作成3](images/create_functions_3.png)  
+  
+以下のように「デプロイが完了しました」と表示されれば、Azure Functionsリソース作成完了です。  
+![Azure Functions作成4](images/create_functions_4.png)  
 
 ## LINEチャネル作成
 - 【無ければ】プロパイダー作成  
