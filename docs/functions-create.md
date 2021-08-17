@@ -24,51 +24,43 @@
 以下のように「デプロイが完了しました」と表示されれば、Azure Functionsリソース作成完了です。  
 ![Azure Functions作成4](images/create_functions_4.png)  
 
-## LINEチャネル作成
-- 【無ければ】プロパイダー作成  
-![プロパイダー作成](images/create_provider.png)  
-![プロパイダー作成2](images/create_provider2.png)
-- プロパイダーのメニュー画面へ移動し
-- 新規チャネル作成 → LINEログイン  
-![LINEログイン](images/line_login.png)
-  - チャネル名とチャネル説明を入力
-  - アプリタイプを「Webアプリ」に設定
-  - LINE開発者契約に同意して作成
-- 新規チャネル作成 → Messaging API  
-![MessagingAPI](images/messaging_api.png)
-  - チャネル名とチャネル説明を入力
-  - 大業種：ウェブサービスを選択
-  - 小業種：ウェブサービス（その他）を選択
-  - LINE公式アカウント利用規約とLINE公式アカウントAPI利用規約に同意して作成
-- Messaging APIの設定
-  - 上部タブの「Messaging API設定」へ移動  
-  ![MessagingAPI設定](images/messaging_api_settings.png)  
-  - 以下の項目を編集する
-    - webhook
-      - Functionsの設定からURL取得
-      - "取得したURL"/api/webhookを設定
-    - 応答メッセージを無効
-    - あいさつメッセージを無効
+## デプロイ
+作成したAzure Functionsリソースにサンプルコードをデプロイします。  
+Visual Studio Codeを開き、Azure Tools拡張機能を追加します。  
+「Functionsリソース作成」手順にて作成したAzure Functionsを右クリック選択し、「Deploy to Function App」を選択します。  
 
-## 環境変数にチャネルアクセストークン設定
-- 先程作成したMessaging APIへ移動
-- Messaging API設定へ移動
-- 最下部にある「チャネルアクセストークン」をコピー
-  - まだ発行してない場合は「発行」ボタンを押下してコピー
+## LINEチャネル作成
+[LINE Developers Console](https://developers.line.biz/console/) を開きます。  
+プロバイダーを登録していない場合は、任意の名前で登録します。  
+![プロパイダー作成2](images/create_provider2.png)  
+  
+LINE Messaging APIのチャネルを作成します。  
+↓のアイコンを選択します。  
+![MessagingAPI](images/messaging_api_1.png)  
+  
+必須項目に任意の値を入力し、利用規約の同意にチェックした後「作成」を選択します。  
+![MessagingAPI](images/messaging_api_2.png)  
+  
+次に、Messaging APIに関する各種設定を行います。  
+「Messaging API設定」タブを開きます。  
+![MessagingAPI設定](images/messaging_api_settings.png)  
+  
+応答メッセージをオフにします。（オンの状態だと、毎回定型文が返答されてしまうため）  
+![MessagingAPI](images/messaging_api_3.png)  
+![MessagingAPI](images/messaging_api_4.png)  
+  
+チャネルアクセストークンを発行し、コピーします。  
+![MessagingAPI](images/messaging_api_5.png)  
+  
+発行したチャネルアクセストークンを下記手順でAzure Functionsに設定します。
 - 先に作成しておいたFunctionsのリソースへ移動
 - リソース画面の左サイドメニューにある設定→構成へ移動
 - アプリケーション設定に「新しいアプリケーション設定」を追加
-  - 名前：LINE_CHANNEL_ACCESS_TOKEN
-  - 値：コピーしたチャネルアクセストークン
-  - デプロイスロットの設定にチェック
-- 新しく追加されたことを確認したら保存
-  - ※保存完了までしばらくかかるので待機
-
-## デプロイ
-- GitHubからソースコードを取得
-  - [GitHub - alterbooth/hol-azure-line-bot](https://github.com/alterbooth/hol-azure-line-bot)
-- [Visual Studio Code を使用して C# 関数を作成する - Azure Functions \| Microsoft Docs](https://docs.microsoft.com/ja-jp/azure/azure-functions/create-first-function-vs-code-csharp)
-- 上記を参考に作成したリソースに対してデプロイを行う
+  - 名前： `LINE_CHANNEL_ACCESS_TOKEN`
+  - 値：先程コピーしたチャネルアクセストークン
+- 「保存」ボタンを押下
+  
+Webhookの設定を更新します。  
+AzureポータルよりFunctionsのURLを取得し、入力します。  
 
 ## 動作確認
-- 作成したLINEアカウントに対してなにか発言して同じ内容が返ってくればOK
