@@ -71,11 +71,12 @@ LINE Messaging APIのチャネルを作成します。
 ![MessagingAPI](images/messaging_api_6.png)  
   
 Webhookの設定を更新します。  
-AzureポータルよりFunctionsのURLを取得し、Webhook URLに入力します。  
+AzureポータルよりFunctionsのURLを取得します。  
 ![MessagingAPI](images/messaging_api_7.png)  
   
 ![MessagingAPI](images/messaging_api_8.png)  
   
+Messaging API設定画面のWebhook URLに入力し、更新後、「Webhookの利用」をオンにします。  
 ![MessagingAPI](images/messaging_api_9.png)  
   
 Messaging API設定画面中で確認できるQRコードを読み込み、LINE友達登録します。
