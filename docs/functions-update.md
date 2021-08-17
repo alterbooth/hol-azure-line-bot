@@ -4,7 +4,7 @@ SQL Databaseのリソースへ移動し、設定→接続文字列からADO.NET�
 Functionsのリソースへ移動し、アプリケーション設定にDBの接続文字列を `SQLDB_CONNECTION` として追加します。
 
 ## ソースコードの変更
-`Functions.csproj` を開き、 `System.Data.SqlClient` パッケージを追加します。
+`Functions.csproj` を開き、PackageReference一覧に `System.Data.SqlClient` を追加します。
 
 ```xml
 <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
@@ -92,4 +92,6 @@ await Reply(firstEvent.ReplyToken, text);
 ```
 
 ## 再度デプロイ・動作確認
-手順「Functionsの作成 > デプロイ」で行ったものと同様の手順で再度デプロイします。
+手順「Functionsの作成 > デプロイ」で行ったものと同様の手順で再度デプロイします。  
+  
+LINEを開き、メッセージ送信後にWeb画面で登録した文言が返信されることを確認します。

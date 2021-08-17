@@ -27,7 +27,15 @@
 ## デプロイ
 作成したAzure Functionsリソースにサンプルコードをデプロイします。  
 Visual Studio Codeを開き、Azure Tools拡張機能を追加します。  
+![MessagingAPI](images/deploy_functions_1.png)  
+  
 「Functionsリソース作成」手順にて作成したAzure Functionsを右クリック選択し、「Deploy to Function App」を選択します。  
+![MessagingAPI](images/deploy_functions_2.png)  
+  
+「Select the folder to deploy」入力欄が表示されたら、Browseから **Functions** フォルダを選択します。  
+「Initialize project for use with VS Code?」と出たらYesを選択してください。  
+「Deployment to "リソース名" completed.」と通知が出たらデプロイ成功です。  
+![MessagingAPI](images/deploy_functions_3.png)  
 
 ## LINEチャネル作成
 [LINE Developers Console](https://developers.line.biz/console/) を開きます。  
@@ -60,7 +68,18 @@ LINE Messaging APIのチャネルを作成します。
   - 値：先程コピーしたチャネルアクセストークン
 - 「保存」ボタンを押下
   
+![MessagingAPI](images/messaging_api_6.png)  
+  
 Webhookの設定を更新します。  
-AzureポータルよりFunctionsのURLを取得し、入力します。  
+AzureポータルよりFunctionsのURLを取得し、Webhook URLに入力します。  
+![MessagingAPI](images/messaging_api_7.png)  
+  
+![MessagingAPI](images/messaging_api_8.png)  
+  
+![MessagingAPI](images/messaging_api_9.png)  
+  
+Messaging API設定画面中で確認できるQRコードを読み込み、LINE友達登録します。
 
 ## 動作確認
+LINEを開き、送信したメッセージと同じメッセージが返信されることを確認します。  
+![MessagingAPI](images/line_1.png)  
