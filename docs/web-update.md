@@ -109,8 +109,7 @@ dotnet ef database update
 メッセージの作成、更新、削除を行えるようにコードを追加します。
 ### Createページを追加
 作成ページを追加します。
-1. [Pages/hands_on]フォルダ直下に[Create.cshtml]と[Create.cshtml.cs]を追加します。
-![](img/web-update09.png)
+1. [Pages/hands_on]フォルダ直下に[Create.cshtml]と[Create.cshtml.cs]を追加します。![](img/web-update09.png)
 ```Create.cshtml
 @page
 @model Web.Pages.hands_on.CreateModel
@@ -252,8 +251,7 @@ namespace Web.Pages.hands_on
 
 ### Deleteページを追加
 削除ページを追加します。
-1. [Pages/hands_on]フォルダ直下に[Delete.cshtml]と[Delete.cshtml.cs]を追加します。
-![](img/web-update11.png)
+1. [Pages/hands_on]フォルダ直下に[Delete.cshtml]と[Delete.cshtml.cs]を追加します。![](img/web-update11.png)
 ```Delete.cshtml
 @page
 @model Web.Pages.hands_on.DeleteModel
@@ -376,8 +374,7 @@ namespace Web.Pages.hands_on
 ![](img/web-update12.png)
 ### Editページを追加
 編集ページを追加します。
-1. [Pages/hands_on]フォルダ直下に[Edit.cshtml]と[Edit.cshtml.cs]を追加します。
-![](img/web-update13.png)
+1. [Pages/hands_on]フォルダ直下に[Edit.cshtml]と[Edit.cshtml.cs]を追加します。![](img/web-update13.png)
 ```Edit.cshtml
 @page
 @model Web.Pages.hands_on.EditModel
