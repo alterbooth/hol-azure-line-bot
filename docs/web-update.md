@@ -43,7 +43,7 @@ Webフォルダ直下にあるappsettings.jsonの[WebContext]の値を先ほど�
 次のセクションではコードでマイグレーションの準備を行います。
 ### WebContext.csを追加
 Webフォルダ直下に[Data]フォルダを作成し、[WebContext.cs]を[Data]フォルダに追加します。
-![](./img/web-update07.png)
+![](./img/web-update07.png)  
 [WebContext.cs]に以下のコードを追加します。
 ```WebContext.cs
 using System;
@@ -366,7 +366,8 @@ namespace Web.Pages.hands_on
 3. Webを再起動して、削除が動作することを確認します。![](img/web-update12.png)
 ### Editページを追加
 編集ページを追加します。
-1. [Pages/hands_on]フォルダ直下に[Edit.cshtml]と[Edit.cshtml.cs]を追加します。![](img/web-update13.png)
+1. [Pages/hands_on]フォルダ直下に[Edit.cshtml]と[Edit.cshtml.cs]を追加します。
+![](img/web-update13.png)
 ```Edit.cshtml
 @page
 @model Web.Pages.hands_on.EditModel
