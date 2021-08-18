@@ -35,7 +35,8 @@ Visual Studio Codeを開き、「拡張機能」をクリック
 ![Deploy to Web App](img/web-create-img8.png)  
 4. 警告画面が出たら、「Deploy」をクリック  
 ![Deploy to Web App](img/web-create-img9.png)  
-5. 「Browse Website」を選択し、アプリが表示されたらデプロイ完了
+5. 「Browse Website」を選択し、アプリが表示されたらデプロイ完了  
+**[Webアプリの更新](https://github.com/alterbooth/hol-azure-line-bot/blob/main/docs/web-update.md)**
 
 
 
