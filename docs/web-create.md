@@ -8,13 +8,13 @@
 ![Azure portal](img/web-create-img2.png)  
 4. 以下のように選択  
    - サブスクリプション：{無料使用枠}  
-   - リソースグループ：{今回使用しているリソースグループ}  
+   - リソースグループ：{functionsで作成したものを選択}  
    - 名前：{azure-handson-app}  
    - 公開：コード  
    - ランタイムスタック：.NET Core 3.1(LTS)  
    - オペレーティングシステム：Windows  
    - 地域：Japan East  
-   - Windowsプラン：(新規)ASP-xxxxxを選択  
+   - Windowsプラン：「(新規)ASP-xxxxx」を選択  
 ![webapp-plan1](img/web-create-img3.png)  
 5. SKUとサイズ：「サイズを変更します」をクリック→「開発/テスト」タブから「F1（無料プラン）」を選択  
 ![webapp-plan2](img/web-create-img4.png)  
