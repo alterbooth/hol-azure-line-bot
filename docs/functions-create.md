@@ -84,3 +84,5 @@ Messaging API設定画面中で確認できるQRコードを読み込み、LINE�
 ## 動作確認
 LINEを開き、送信したメッセージと同じメッセージが返信されることを確認します。  
 ![MessagingAPI](images/line_1.png)  
+  
+確認できたら、次のステップ「[Webアプリの作成](./docs/web-create)」へ進みます。
