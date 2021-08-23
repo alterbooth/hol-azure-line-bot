@@ -33,4 +33,4 @@
 ![Deploy to Web App](images/web-create-img9.png)  
 1. 「Browse Website」を選択し、アプリが表示されたらデプロイ完了  
 
-**確認できたら、次のステップ[Webアプリの更新](./web-update.md)へ進みます。**
+**確認できたら、次のステップ[Webアプリの更新](./3-web-update.md)へ進みます。**
