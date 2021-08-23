@@ -1,10 +1,10 @@
-# Webアプリの更新
+# 3. Webアプリの更新
 このテキストではデプロイしたWebアプリのコードを書き加えて、メッセージの作成、更新、削除が行えるようにします。
-## DBマイグレーション準備
+## 3-1. DBマイグレーション準備
 コードを書く前にデータベースの準備をします。
 データのやりとりができるようにデータベースをAzure上に構築します。
-### SQL Databaseリソース追加
 
+### 3-1-1. SQL Databaseリソース追加
 1. [SQL デプロイ オプションの選択](https://portal.azure.com/#create/Microsoft.AzureSQL)
 ページを参照します。
 2. [SQL データベース] で、 [リソースの種類] を [単一データベース] に設定し、 [作成] を選択します。
@@ -33,13 +33,14 @@
 ![サーバー作成4](./images/web-update05.png)
 15.  [確認と作成] ページで、確認後、 [作成] を選択します。
 
-### データベース接続文字列の取得
+### 3-1-2. データベース接続文字列の取得
 1.  デプロイが完了したら、「リソースに移動]を選択します。
 2.  画面右の[データベース接続文字列の表示]を選択します。
 ![接続文字列](./images/web-update06.png)
 3.  画面に表示された接続文字列をメモ帳などに控えます。
 4.  接続文字列の途中にある[{your_password}]をサーバー作成時に設定したパスワードに書き換えます。(例:Pasword='Passw0rd!')
-### appsettings.jsonにDB接続文字列の追加
+
+### 3-1-3. appsettings.jsonにDB接続文字列の追加
 Webフォルダ直下にあるappsettings.jsonの[WebContext]の値を先ほど控えた接続文字列に置き換えます。
 ```appsettings.json
 "ConnectionStrings": {
@@ -47,7 +48,8 @@ Webフォルダ直下にあるappsettings.jsonの[WebContext]の値を先ほど�
   }
 ```
 次のセクションではコードでマイグレーションの準備を行います。
-### WebContext.csを追加
+
+### 3-1-4. WebContext.csを追加
 Webフォルダ直下に[Data]フォルダを作成し、[WebContext.cs]を[Data]フォルダに追加します。
 ![](./images/web-update07.png)  
 [WebContext.cs]に以下のコードを追加します。
@@ -72,7 +74,8 @@ namespace Web.Data
     }
 }
 ```
-### Startup.csにコード追加
+
+### 3-1-5. Startup.csにコード追加
 Webアプリとデータベースが接続できるように、 [Startup.cs]を更新します。  
 usingに `Web.Data` を追加します。
 
@@ -92,7 +95,8 @@ public void ConfigureServices(IServiceCollection services)
             options.UseSqlServer(Configuration.GetConnectionString("WebContext")));
 }
 ```
-### マイグレーションツールのインストール
+
+### 3-1-6. マイグレーションツールのインストール
 マイグレーションはEntity Framework CoreのCLIツールを使用します。このツールでデータベースの移行作業をを行うことができます。次のコマンドでツールのインストールします。
 ```bash
 dotnet tool install --global dotnet-ef
@@ -102,7 +106,8 @@ dotnet tool install --global dotnet-ef
 dotnet ef
 ```
 正常にインストールされていたら、インストール完了です。
-## マイグレーションの実行
+
+## 3-2. マイグレーションの実行
 次のコマンドを実行してマイグレーションを行います。
 ```bash
 cd ./Web
@@ -113,9 +118,11 @@ dotnet ef database update
 
 成功するとAzure上で正常にDBが作成されていることが確認できます。
 ![SQL Server](images/web-update08.png)
-## コードの変更
+
+## 3-3. コードの変更
 メッセージの作成、更新、削除を行えるようにコードを追加します。
-### Createページを追加
+
+### 3-3-1. Createページを追加
 作成ページを追加します。
 1. [Pages/hands_on]フォルダ直下に[Create.cshtml]と[Create.cshtml.cs]を追加します。  
 ![](images/web-update09.png)
@@ -258,7 +265,7 @@ namespace Web.Pages.hands_on
 4. [Web]を起動して、メッセージが作成できることを確認します。
 ![](images/web-update10.png)
 
-### Deleteページを追加
+### 3-3-2. Deleteページを追加
 削除ページを追加します。
 1. [Pages/hands_on]フォルダ直下に[Delete.cshtml]と[Delete.cshtml.cs]を追加します。  
 ![](images/web-update11.png)
@@ -383,7 +390,8 @@ namespace Web.Pages.hands_on
 ```
 3. Webを再起動して、削除が動作することを確認します。
 ![](images/web-update12.png)
-### Editページを追加
+
+### 3-3-3. Editページを追加
 編集ページを追加します。
 1. [Pages/hands_on]フォルダ直下に[Edit.cshtml]と[Edit.cshtml.cs]を追加します。  
 ![](images/web-update13.png)
@@ -512,8 +520,8 @@ namespace Web.Pages.hands_on
 ```
 3. Webを再起動して、編集が動作することを確認します。![](images/web-update14.png)
 
-## 再度デプロイ
-### Web Appsの接続文字列の設定
+## 3-4. 再度デプロイ
+### 3-4-1. Web Appsの接続文字列の設定
 Web AppsからDBに接続するために、作成したWeb Appsリソースの[アプリケーション設定]を行います。
 1. [Azure Portal](https://portal.azure.com/#home)を開き、画面上部の検索に[azure-handson-app]と入力し、表示された[azure-handson-app]を選択します。
 2. ページ右側の[設定]>[構成]を選択します。![](images/web-update15.png)
@@ -527,7 +535,7 @@ Web AppsからDBに接続するために、作成したWeb Appsリソースの[�
 ![](images/web-update17.png)
 5. [続行]を選択します。
 
-### 再デプロイ
+### 3-4-2. 再デプロイ
 1. VS Codeの[表示]>[コマンドパレット]を開きます。
 2. [deploy]と入力し、[Azure App Service: Deploy to Web App]を選択します。
 ![](images/web-update18.png)
@@ -537,9 +545,7 @@ Web AppsからDBに接続するために、作成したWeb Appsリソースの[�
 6. 警告が表示されたら、[Deploy]を選択します。
 7. 「Browse Website」を選択し、アプリが表示されたらデプロイ完了です。
 
-
-## 動作確認
-### 画面からデータ更新
-デプロイ後、表示されたサイトからメッセージの作成、編集、削除ができることを確認します。
-
+## 3-5. 動作確認
+デプロイ後、表示されたサイトからメッセージの作成、編集、削除ができることを確認します。  
+  
 確認できたら、次のステップ「[Functionsの更新](./functions-update.md)」へ進みます。

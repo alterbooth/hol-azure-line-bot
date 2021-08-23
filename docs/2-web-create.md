@@ -1,5 +1,5 @@
-# Webアプリの作成
-## Web Appsリソース作成
+# 2. Webアプリの作成
+## 2-1. Web Appsリソース作成
 1. ポータル画面にログイン
 1. 「リソースの作成」をクリック  
 ![Azure portal](images/web-create-img1.png)
@@ -20,7 +20,7 @@
 1. 「確認および作成」→「作成」をクリック
 1. リソース作成完了（少し時間がかかります）
 
-## サンプルコードのデプロイ
+## 2-2. サンプルコードのデプロイ
 1. VSCodeのターミナルを開き、 `Web` ディレクトリに移動
 1. `dotnet publish -c Release -o ./publish` コマンドを実行
 1. 左ツールバーのAzureアイコンをクリックし、「App Service」→「Sign in to Azure」からアカウントを選択  
