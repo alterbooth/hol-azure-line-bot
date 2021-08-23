@@ -72,9 +72,17 @@ namespace Web.Data
     }
 }
 ```
-### StartUp.csにコード追加
-Webアプリとデータベースが接続できるように、 [StartUp.cs]に次のコードを追加します。
-```StartUp.cs
+### Startup.csにコード追加
+Webアプリとデータベースが接続できるように、 [Startup.cs]を更新します。  
+usingに `Web.Data` を追加します。
+
+```
+using Web.Data;
+```
+
+ConfigureServices内に下記の通りコードを追加します。
+
+```Startup.cs
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddRazorPages();

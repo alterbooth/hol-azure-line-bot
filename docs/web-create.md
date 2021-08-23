@@ -6,13 +6,13 @@
 1. 「Webアプリ」をクリック  
 ![Azure portal](images/web-create-img2.png)
 1. 以下のように選択
-    - サブスクリプション：{無料使用枠}  
-    - リソースグループ：{functionsで作成したものを選択}  
-    - 名前：{任意のユニーク文字列}  
-    - 公開：コード  
-    - ランタイムスタック：.NET Core 3.1(LTS)  
-    - オペレーティングシステム：Windows  
-    - 地域：Japan East または Japan West（リソースグループと同じ方）  
+    - サブスクリプション：{無料使用枠}
+    - リソースグループ：{functionsで作成したものを選択}
+    - 名前：{任意のユニーク文字列}
+    - 公開：コード
+    - ランタイムスタック：.NET Core 3.1(LTS)
+    - オペレーティングシステム：Windows
+    - 地域：Japan East
     - Windowsプラン：「(新規)ASP-xxxxx」を選択  
 ![webapp-plan1](images/web-create-img3.png)  
 1. SKUとサイズ：「サイズを変更します」をクリック→「開発/テスト」タブから「F1（無料プラン）」を選択  

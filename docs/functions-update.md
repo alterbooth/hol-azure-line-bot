@@ -1,7 +1,9 @@
 # Functionsの更新
 ## アプリケーション設定にDB接続文字列を追加
-SQL Databaseのリソースへ移動し、設定→接続文字列からADO.NETの接続文字列をコピーします。  
-Functionsのリソースへ移動し、アプリケーション設定にDBの接続文字列を `SQLDB_CONNECTION` として追加します。
+Functionsのリソースへ移動し、アプリケーション設定にSQLDB接続文字列を `SQLDB_CONNECTION` として追加します。  
+前ステップにて作成したSQLDB接続文字列を使用してください。  
+
+![アプリケーション設定の追加](images/add_application_settings.png) 
 
 ## ソースコードの変更
 `Functions.csproj` を開き、PackageReference一覧に `System.Data.SqlClient` を追加します。
@@ -51,7 +53,7 @@ private Message GetMessage()
         using (var command = connection.CreateCommand())
         {
             // 1件のみ取得
-            command.CommandText = "SELECT TOP 1 * FROM Messages;";
+            command.CommandText = "SELECT TOP 1 * FROM Message;";
             using (var reader = command.ExecuteReader())
             {
                 if (reader.Read())
