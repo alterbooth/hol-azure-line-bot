@@ -1,5 +1,5 @@
-# Functionsの作成
-## Functionsリソース作成
+# 1. Functionsの作成
+## 1-1. Functionsリソース作成
 はじめに、リソースグループを作成します。  
 [Azureポータル](https://portal.azure.com) を開き、上部の検索バーから「リソース」と入力し「リソース グループ」を選択します。  
 ![リソースグループ作成1](images/create_resourcegroup_1.png)  
@@ -24,7 +24,7 @@
 以下のように「デプロイが完了しました」と表示されれば、Azure Functionsリソース作成完了です。  
 ![Azure Functions作成4](images/create_functions_4.png)  
 
-## デプロイ
+## 1-2. デプロイ
 作成したAzure Functionsリソースにサンプルコードをデプロイします。  
 Visual Studio Codeを開き、Azure Tools拡張機能を追加します。  
 ![MessagingAPI](images/deploy_functions_1.png)  
@@ -37,7 +37,7 @@ Visual Studio Codeを開き、Azure Tools拡張機能を追加します。
 「Deployment to "リソース名" completed.」と通知が出たらデプロイ成功です。  
 ![MessagingAPI](images/deploy_functions_3.png)  
 
-## LINEチャネル作成
+## 1-3. LINEチャネル作成
 [LINE Developers Console](https://developers.line.biz/console/) を開きます。  
 プロバイダーを登録していない場合は、任意の名前で登録します。  
 ![プロパイダー作成2](images/create_provider2.png)  
@@ -81,8 +81,8 @@ Messaging API設定画面のWebhook URLに入力し、更新後、「Webhookの�
   
 Messaging API設定画面中で確認できるQRコードを読み込み、LINE友達登録します。
 
-## 動作確認
+## 1-4. 動作確認
 LINEを開き、送信したメッセージと同じメッセージが返信されることを確認します。  
 ![MessagingAPI](images/line_1.png)  
   
-確認できたら、次のステップ「[Webアプリの作成](./web-create.md)」へ進みます。
+確認できたら、次のステップ「[Webアプリの作成](./2-web-create.md)」へ進みます。

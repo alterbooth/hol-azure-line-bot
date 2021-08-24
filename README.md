@@ -21,7 +21,7 @@
     - https://developers.line.biz/ja/docs/line-developers-console/login-account/
 
 ## 目次
-1. [Functionsの作成](./docs/functions-create.md)
-1. [Webアプリの作成](./docs/web-create.md)
-1. [Webアプリの更新](./docs/web-update.md)
-1. [Functionsの更新](./docs/functions-update.md)
+1. [Functionsの作成](./docs/1-functions-create.md)
+1. [Webアプリの作成](./docs/2-web-create.md)
+1. [Webアプリの更新](./docs/3-web-update.md)
+1. [Functionsの更新](./docs/4-functions-update.md)

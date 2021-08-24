@@ -1,9 +1,11 @@
-# Functionsの更新
-## アプリケーション設定にDB接続文字列を追加
-SQL Databaseのリソースへ移動し、設定→接続文字列からADO.NETの接続文字列をコピーします。  
-Functionsのリソースへ移動し、アプリケーション設定にDBの接続文字列を `SQLDB_CONNECTION` として追加します。
+# 4. Functionsの更新
+## 4-1. アプリケーション設定にDB接続文字列を追加
+Functionsのリソースへ移動し、アプリケーション設定にSQLDB接続文字列を `SQLDB_CONNECTION` として追加します。  
+前ステップにて作成したSQLDB接続文字列を使用してください。  
 
-## ソースコードの変更
+![アプリケーション設定の追加](images/add_application_settings.png) 
+
+## 4-2. ソースコードの変更
 `Functions.csproj` を開き、PackageReference一覧に `System.Data.SqlClient` を追加します。
 
 ```xml
@@ -51,7 +53,7 @@ private Message GetMessage()
         using (var command = connection.CreateCommand())
         {
             // 1件のみ取得
-            command.CommandText = "SELECT TOP 1 * FROM Messages;";
+            command.CommandText = "SELECT TOP 1 * FROM Message;";
             using (var reader = command.ExecuteReader())
             {
                 if (reader.Read())
@@ -91,7 +93,7 @@ var text = message?.Text ?? firstEvent.Message.Text;
 await Reply(firstEvent.ReplyToken, text);
 ```
 
-## 再度デプロイ・動作確認
+## 4-3. 再度デプロイ・動作確認
 手順「Functionsの作成 > デプロイ」で行ったものと同様の手順で再度デプロイします。  
   
 LINEを開き、メッセージ送信後にWeb画面で登録した文言が返信されることを確認します。
