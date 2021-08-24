@@ -6,10 +6,10 @@ Functionsのリソースへ移動し、アプリケーション設定にSQLDB接
 ![アプリケーション設定の追加](images/add_application_settings.png) 
 
 ## 4-2. ソースコードの変更
-`Functions.csproj` を開き、PackageReference一覧に `System.Data.SqlClient` を追加します。
+`Web`フォルダ直下で下記のコマンド打ち、 `System.Data.SqlClient` パッケージを`Webプロジェクト`に追加します。
 
-```xml
-<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+```bash
+dotnet add package System.Data.SqlClient -v 4.8.2
 ```
 
 `Webhook.cs` を開き、処理を追加します。  
