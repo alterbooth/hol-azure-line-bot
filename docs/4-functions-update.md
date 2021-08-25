@@ -6,7 +6,8 @@ Functionsのリソースへ移動し、アプリケーション設定にSQLDB接
 ![アプリケーション設定の追加](images/add_application_settings.png) 
 
 ## 4-2. ソースコードの変更
-`Web`フォルダ直下で下記のコマンド打ち、 `System.Data.SqlClient` パッケージを`Webプロジェクト`に追加します。
+VSCodeのターミナルを開き、 `Functions` ディレクトリに移動します。  
+下記コマンドを実行し、 `System.Data.SqlClient` パッケージをプロジェクトに追加します。
 
 ```bash
 dotnet add package System.Data.SqlClient -v 4.8.2
@@ -97,3 +98,16 @@ await Reply(firstEvent.ReplyToken, text);
 手順「Functionsの作成 > デプロイ」で行ったものと同様の手順で再度デプロイします。  
   
 LINEを開き、メッセージ送信後にWeb画面で登録した文言が返信されることを確認します。
+
+## 【応用】テキスト以外のメッセージの送信
+今回のハンズオンでは、LINE Messaging APIのうち「応答メッセージ」のAPIを使用しています。  
+応答メッセージのドキュメント↓  
+https://developers.line.biz/ja/reference/messaging-api/#send-reply-message  
+  
+このAPIでは、テキスト以外の形式のメッセージを送信することも可能です。  
+例えば、↓ドキュメントではスタンプを送信する際に使用するJSONの形式が記載されています。  
+https://developers.line.biz/ja/reference/messaging-api/#sticker-message  
+  
+今回のソースコードでは下記の箇所でJSON文字列を生成しています。  
+この部分を変更し、送信するテキスト内容を変更したり、テキスト以外の形式でメッセージ送信を行ってみましょう。  
+https://github.com/alterbooth/hol-azure-line-bot/blob/main/Functions/Webhook.cs#L73-L78
