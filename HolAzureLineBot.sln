@@ -1,16 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{358C9574-A219-4D49-AEAD-6FF401CC100D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{789DF655-37BB-4983-AECC-A7BCEE724210}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functions", "Functions\Functions.csproj", "{0D6C0DB0-1CEB-45B3-9C31-B6232F9EB5BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "Functions\Functions.csproj", "{0D6C0DB0-1CEB-45B3-9C31-B6232F9EB5BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{358C9574-A219-4D49-AEAD-6FF401CC100D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{358C9574-A219-4D49-AEAD-6FF401CC100D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{358C9574-A219-4D49-AEAD-6FF401CC100D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{358C9574-A219-4D49-AEAD-6FF401CC100D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0D6C0DB0-1CEB-45B3-9C31-B6232F9EB5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D6C0DB0-1CEB-45B3-9C31-B6232F9EB5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6C0DB0-1CEB-45B3-9C31-B6232F9EB5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,4 +28,3 @@ Global
 		SolutionGuid = {E08944EC-FAF3-4679-9203-0C0D21B84DEA}
 	EndGlobalSection
 EndGlobal
-
